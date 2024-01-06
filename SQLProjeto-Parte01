@@ -1,0 +1,33 @@
+
+create database LojaInfo;
+
+-- Selecionando o banco a ser usado
+use LojaInfo;
+
+-- Criando as tabelas
+create table Usuarios(
+iduser int primary key,
+usuario varchar(50) not null,
+telefone varchar(15),
+cpf varchar(19) not null,
+login varchar(15) not null unique,
+senha varchar(15) not null
+);
+
+-- Verificar a tabela
+describe Usuarios;
+
+-- Inserindo dados na tabela
+insert into Usuarios(iduser, usuario, telefone, cpf, login, senha)
+values(1, 'Valdir Oliveira', '17 99713-1004', '000.000.000-00', 'Valdir Oliveira', '.endU54Pgi,');
+
+-- Verificando os dados da tabela
+select * from Usuarios;
+
+-- Inserindo novo usuário
+insert into Usuarios(iduser, usuario, telefone, cpf, login, senha)
+values(2, 'admin', '00 00000-1000', '000.000.000-00', 'Admin', '.endU54Pgi,');
+
+-- Modificando dados na tabela
+update usuarios set telefone='99 99999-9999' where iduser=2;
+update usuarios set senha='.chOUrIcO2024,' where iduser=1;
